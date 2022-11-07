@@ -7,13 +7,15 @@ from yt_concate.yt_concate.pipeline.steps.preflight import Preflight
 from yt_concate.yt_concate.pipeline.steps.postflight import Postflight
 # import urllib.request
 # import json
-from yt_concate.yt_concate.settings  import API_KEY
+from yt_concate.yt_concate.settings import API_KEY
 
 CHANNEL_ID = "UCKSVUHI9rbbkXhvAXK-2uxA"
 print(API_KEY)
+
+
 def main():
-    inputs={
-        "channel_id" : CHANNEL_ID
+    inputs = {
+        "channel_id": CHANNEL_ID
     }
     steps = [
         Preflight(),
@@ -25,7 +27,8 @@ def main():
 
     utils = Utils()
     p = Pipeline(steps)
-    p.run(inputs,utils)
+    p.run(inputs, utils)
+
 
 if __name__ == "__main__":
     main()
