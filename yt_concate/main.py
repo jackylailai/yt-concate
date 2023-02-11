@@ -27,7 +27,7 @@ def main():
 
     utils = Utils()
     p = Pipeline(steps)
-    p.run(inputs, utils)
+    p.run(data,inputs, utils)
 
 
 if __name__ == "__main__":
@@ -61,3 +61,12 @@ if __name__ == "__main__":
 #
 # video_list = get_all_video_in_channel(CHANNEL_ID)
 # print(len(video_list))
+
+
+
+
+#先找到data 有哪些class需要data哪些不需要
+#大家繼承abc class 需要帶這麼多參數嗎？
+#為什麼這幾個
+#一個一個debug
+#

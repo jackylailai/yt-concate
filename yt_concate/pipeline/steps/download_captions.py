@@ -4,7 +4,7 @@ from yt_concate.yt_concate.pipeline.steps.step import Step
 
 
 
-class DownloadCaptions(Step):
+# class DownloadCaptions(Step):
     def process(self, data, inputs):
         start = time.time()
         for url in data:
@@ -14,10 +14,10 @@ class DownloadCaptions(Step):
                 continue
             print(url)
             try:
-            source = YouTube(url)
+                source = YouTube(url)
 
-            en_caption = source.captions.get_by_language_code('en')
-            en_caption_convert_to_srt = (en_caption.generate_srt_captions())
+                en_caption = source.captions.get_by_language_code('en')
+                en_caption_convert_to_srt = (en_caption.generate_srt_captions())
             except (KeyError, AttributeError):
                 print("error when downloaind caption for", url)
             #print(en_caption_convert_to_srt)
@@ -28,4 +28,5 @@ class DownloadCaptions(Step):
             text_file.close()
         end = time.time()
         print("took", end - start, "s")
+
 
